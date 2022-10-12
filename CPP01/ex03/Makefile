@@ -1,12 +1,12 @@
 SRC = main.cpp \
-Zombie.cpp \
-newZombie.cpp \
-randomChump.cpp
+Weapon.cpp \
+HumanA.cpp \
+HumanB.cpp
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex00
+NAME = ex02
 
 #-----------TXT-----------
 TXT_BLACK=\033[0;30m
