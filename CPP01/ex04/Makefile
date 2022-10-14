@@ -1,12 +1,10 @@
 SRC = main.cpp \
-Weapon.cpp \
-HumanA.cpp \
-HumanB.cpp
+FileManager.cpp
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex03
+NAME = ex04
 
 #-----------TXT-----------
 TXT_BLACK=\033[0;30m
