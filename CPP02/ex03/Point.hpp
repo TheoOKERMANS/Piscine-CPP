@@ -18,8 +18,11 @@ class Point
 
 		const Fixed&	getX( void ) const;
 		const Fixed&	getY( void ) const;
+		void			printPos( void ) const;
 };
 
 bool	bsp( Point const a, Point const b, Point const c, Point const point);
+bool	operator==( const Point &p1, const Point &p2 );
 void	printFunction( Point const a, Point const b );
+
 #endif

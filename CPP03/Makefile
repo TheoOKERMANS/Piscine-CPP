@@ -1,11 +1,9 @@
-SRC = main.cpp \
-Fixed.cpp \
-Point.cpp 
+SRC = main.cpp 
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex03
+NAME = ex00
 
 #-----------TXT-----------
 TXT_BLACK=\033[0;30m
