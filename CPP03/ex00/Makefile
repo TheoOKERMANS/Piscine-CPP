@@ -1,4 +1,5 @@
-SRC = megaphone.cpp
+SRC = main.cpp \
+ClapTrap.cpp 
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++

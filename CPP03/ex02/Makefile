@@ -1,9 +1,12 @@
-SRC = main.cpp 
+SRC = main.cpp \
+ClapTrap.cpp \
+ScavTrap.cpp \
+FragTrap.cpp
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex00
+NAME = ex02
 
 #-----------TXT-----------
 TXT_BLACK=\033[0;30m
@@ -26,7 +29,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) -c $(SRC)
-	$(CC) -o $(NAME) $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(FLAGS)
 
 clean:
 	rm -f $(OBJ)

@@ -1,9 +1,13 @@
-SRC = megaphone.cpp
+SRC = main.cpp \
+ClapTrap.cpp \
+ScavTrap.cpp \
+FragTrap.cpp\
+DiamondTrap.cpp
 
 OBJ= $(SRC:.cpp=.o)
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex00
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow
+NAME = ex03 
 
 #-----------TXT-----------
 TXT_BLACK=\033[0;30m

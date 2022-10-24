@@ -29,7 +29,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) -c $(SRC)
-	$(CC) -o $(NAME) $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(FLAGS)
 
 clean:
 	rm -f $(OBJ)
