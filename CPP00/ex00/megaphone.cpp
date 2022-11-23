@@ -5,7 +5,7 @@ int main(int argc, char **argv)
 	int	i;
 
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
 		i = 1;
@@ -14,6 +14,6 @@ int main(int argc, char **argv)
 			std::cout << argv[i];
 			i++;
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 }
