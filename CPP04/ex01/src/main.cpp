@@ -5,7 +5,15 @@
 int main( void )
 {
 	{
-		int	size = 2;
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		std::cout << std::endl;
+		delete j;
+		delete i;
+		std::cout << std::endl;
+	}
+	{
+		int	size = 5;
 		Animal* list[size];
 		int	i = 0;
 

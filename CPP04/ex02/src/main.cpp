@@ -4,8 +4,9 @@
 
 int main( void )
 {
+	//Animal a = Animal("tst");
 	{
-		int	size = 2;
+		int	size = 6;
 		Animal* list[size];
 		int	i = 0;
 

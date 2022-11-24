@@ -12,7 +12,7 @@ class WrongAnimal
 		WrongAnimal( void );
 		WrongAnimal( const WrongAnimal& cp );
 		WrongAnimal&	operator=( const WrongAnimal& cp );
-		~WrongAnimal( void );
+		virtual ~WrongAnimal( void );
 
 		void	makeSound( void ) const;
 

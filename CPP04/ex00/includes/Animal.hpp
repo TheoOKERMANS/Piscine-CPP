@@ -12,7 +12,7 @@ class Animal
 		Animal( void );
 		Animal( const Animal& cp );
 		Animal&	operator=( const Animal& cp );
-		~Animal( void );
+		virtual ~Animal( void );
 
 		virtual void	makeSound( void ) const;
 
