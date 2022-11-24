@@ -13,5 +13,5 @@ int main()
 	std::cout << "La valeur de la string : " << brain << std::endl;
 	std::cout << "La valeur pointée par stringPTR : " << *stringPTR << std::endl;
 	std::cout << "La valeur pointée par stringREF : " << stringREF << std::endl;
-	return (1);
+	return (0);
 }

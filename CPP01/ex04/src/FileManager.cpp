@@ -2,12 +2,11 @@
 
 FileManager::FileManager( void ) : _fileName("")
 {
-
 }
 
 FileManager::~FileManager( void )
 {
-
+	delete (this->_fileStream);
 }
 
 int	FileManager::setFile( std::string fileName )
@@ -18,10 +17,10 @@ int	FileManager::setFile( std::string fileName )
 		return (0);
 	}
 	this->_fileName = fileName;
-	this->_fileStream = std::ifstream(fileName);
-	if (this->_fileStream.good() == 0)
+	this->_fileStream = new std::ifstream(fileName.c_str(), std::ifstream::in);
+	if (this->_fileStream->good() == 0)
 	{
-		this->_fileStream.close();
+		this->_fileStream->close();
 		std::cout << "File does not exists" << std::endl;
 		return (0);
 	}
@@ -39,11 +38,11 @@ int	FileManager::replace( std::string s1, std::string s2 )
 
 	if (s1 == "" || s2 == "")
 	{
-		this->_fileStream.close();
+		this->_fileStream->close();
 		std::cout << "s1 and s2 can't be empty" << std::endl;
 		return (0);
 	}
-	buffer << this->_fileStream.rdbuf();
+	buffer << this->_fileStream->rdbuf();
 	str = buffer.str();
 	strLen = str.length();
 	s1Len = s1.length();
@@ -55,6 +54,9 @@ int	FileManager::replace( std::string s1, std::string s2 )
 		{
 			str.erase(i, s1Len);
 			str.insert(i, s2);
+			strLen = str.length();
+			if (s2Len > s1Len)
+				i += s2Len - s1Len;
 		}
 		i++;
 	}
@@ -64,8 +66,9 @@ int	FileManager::replace( std::string s1, std::string s2 )
 
 void	FileManager::writeOutfile( std::string toWrite )
 {
-	std::ofstream	ofs(this->_fileName + ".replace");
+	std::ofstream*	ofs = new std::ofstream((this->_fileName + ".replace").c_str(), std::ofstream::out);
 
-	ofs << toWrite;
-	ofs.close();
+	*ofs << toWrite;
+	ofs->close();
+	delete (ofs);
 }

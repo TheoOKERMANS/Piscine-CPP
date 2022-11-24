@@ -47,31 +47,25 @@ void	Harl::error( void )
 
 void	Harl::complain( std::string level )
 {
-	enum cmd {
-		DEFAULT,
-		DEBUG,
-		INFO,
-		WARNING,
-		ERROR
-	};
-	static std::map<std::string, cmd> s_mapStringValues;
+	static std::map<std::string, int> s_mapStringValues;
 
-	s_mapStringValues["DEBUG"] = DEBUG;
-	s_mapStringValues["INFO"] = INFO;
-	s_mapStringValues["WARNING"] = WARNING;
-	s_mapStringValues["ERROR"] = ERROR;
+	s_mapStringValues[""] = 0;
+	s_mapStringValues["DEBUG"] = 1;
+	s_mapStringValues["INFO"] = 2;
+	s_mapStringValues["WARNING"] = 3;
+	s_mapStringValues["ERROR"] = 4;
 	switch(s_mapStringValues[level])
 	{
-		case DEBUG:
+		case 1:
 			this->debug();
 			break;
-		case INFO:
+		case 2:
 			this->info();
 			break;
-		case WARNING:
+		case 3:
 			this->warning();
 			break;
-		case ERROR:
+		case 4:
 			this->error();
 			break;
 		default:

@@ -1,9 +1,10 @@
-SRC = main.cpp \
+SRC_FILE = main.cpp \
 Harl.cpp
 
-OBJ= $(SRC:.cpp=.o)
+SRC = $(addprefix src/, $(SRC_FILE))
+OBJ= $(SRC_FILE:.cpp=.o)
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
 NAME = HarlFilter
 
 #-----------TXT-----------
@@ -26,11 +27,14 @@ TXT_DONE=\033[0;32m
 all: $(NAME)
 
 $(NAME):
-	$(CC) -c $(SRC)
-	$(CC) -o $(NAME) $(OBJ) $(FLAGS)
+	$(CC) -c $(SRC) $(FLAGS) -g
+	$(CC) -o $(NAME) $(OBJ) $(FLAGS) -g
+	mkdir obj
+	mv $(OBJ) obj
 
 clean:
 	rm -f $(OBJ)
+	rm -rf obj
 
 fclean: clean
 	rm -f $(NAME)

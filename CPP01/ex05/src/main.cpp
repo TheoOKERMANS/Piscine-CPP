@@ -1,6 +1,6 @@
 #include "Harl.hpp"
 
-int main(int argc, char **argv)
+int main(void)
 {
 	Harl h;
 	std::string str;
@@ -11,5 +11,5 @@ int main(int argc, char **argv)
 		h.complain(str);
 		std::cin >> str;
 	}
-	return (1);
+	return (0);
 }
