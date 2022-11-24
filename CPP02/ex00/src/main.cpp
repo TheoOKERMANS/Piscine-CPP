@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-int main(int argc, char** argv)
+int main(void)
 {
 	Fixed a;
 	Fixed b( a );
