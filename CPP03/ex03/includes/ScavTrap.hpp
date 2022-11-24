@@ -7,6 +7,9 @@ class ScavTrap : virtual public ClapTrap
 {
 	protected :
 		ScavTrap( void );
+		static const int hp = 100;
+		static const int ep = 50;
+		static const int ad = 30;
 
 	public :
 		ScavTrap( std::string name );

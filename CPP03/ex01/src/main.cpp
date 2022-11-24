@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	ScavTrap tmp1("a");
 	ScavTrap tmp2("b");

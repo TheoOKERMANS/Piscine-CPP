@@ -3,19 +3,19 @@
 ClapTrap::ClapTrap( std::string name ) 
 	: name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap: Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& ct )
 	: name(ct.name), hitPoints(ct.hitPoints), energyPoints(ct.energyPoints)
 	, attackDamage(ct.attackDamage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap: Copy constructor called" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& ct )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap: Copy assignment operator called" << std::endl;
 	this->name = ct.name;
 	this->hitPoints = ct.hitPoints;
 	this->energyPoints = ct.energyPoints;
@@ -25,7 +25,7 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap& ct )
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap: Destructor called" << std::endl;
 }
 
 void	ClapTrap::attack( const std::string& target )
@@ -47,7 +47,7 @@ void	ClapTrap::attack( const std::string& target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (amount < this->hitPoints)
+	if (amount < (unsigned int)this->hitPoints)
 	{
 		this->hitPoints -= amount;
 		std::cout << "ClapTrap " << this->name << " take " << amount 
@@ -96,4 +96,14 @@ int			ClapTrap::getAttackDamage( void ) const
 void		ClapTrap::setAttackDamage( int ad )
 {
 	this->attackDamage = ad;
+}
+
+void		ClapTrap::setEnergyPoints( int ep)
+{
+	this->energyPoints = ep;
+}
+
+void		ClapTrap::setHitPoints( int hp)
+{
+	this->hitPoints = hp;
 }

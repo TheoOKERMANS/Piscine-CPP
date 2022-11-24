@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	ClapTrap tmp1("a");
 	ClapTrap tmp2("b");

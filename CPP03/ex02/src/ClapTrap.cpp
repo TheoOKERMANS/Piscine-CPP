@@ -1,15 +1,9 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) 
-	: name(""), hitPoints(10), energyPoints(10), attackDamage(0)
-{
-	std::cout << "ClapTrap: Default constructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap( std::string name ) 
 	: name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "ClapTrap: Name constructor called" << std::endl;
+	std::cout << "ClapTrap: Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& ct )
@@ -53,7 +47,7 @@ void	ClapTrap::attack( const std::string& target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (amount < this->hitPoints)
+	if (amount < (unsigned int)this->hitPoints)
 	{
 		this->hitPoints -= amount;
 		std::cout << "ClapTrap " << this->name << " take " << amount 

@@ -14,6 +14,7 @@ int	main( void )
 	std::cout << std::endl << std::endl << std::endl;
 	{
 		DiamondTrap a("a");
+		std::cout << std::endl;
 		DiamondTrap b("b");
 
 		std::cout << std::endl;

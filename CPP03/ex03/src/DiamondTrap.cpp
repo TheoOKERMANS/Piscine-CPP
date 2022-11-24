@@ -3,25 +3,25 @@
 DiamondTrap::DiamondTrap( void )
 {
 	this->name = "";
-	this->hitPoints = ClapTrap::hitPoints;
-	this->energyPoints = ClapTrap::energyPoints;
-	this->attackDamage = ClapTrap::attackDamage;
+	this->hitPoints = FragTrap::hp;
+	this->energyPoints = ScavTrap::ep;
+	this->attackDamage = FragTrap::ad;
 	std::cout << "DiamondTrap: Default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name )
-//	: ClapTrap(name), FragTrap(name), ScavTrap(name)
+:ScavTrap(name)
 {
 	ClapTrap::name = name + "_clap_name";
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap::hp;
+	this->energyPoints = ScavTrap::ep;
+	this->attackDamage = FragTrap::ad;
 	std::cout << "DiamondTrap: Name constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap& cp ) 
-	: ClapTrap(cp)//, FragTrap(cp), ScavTrap(cp)
+	: ClapTrap(cp)
 {
 	std::cout << "DiamondTrap: Copy constructor called" << std::endl;
 }

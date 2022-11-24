@@ -29,11 +29,4 @@ class ClapTrap
 		void		setHitPoints( int hp);
 };
 
-/*
-Point( void );
-		Point( const float xf, const float yf );
-		Point( const Point &p );
-		Point&	operator=( const Point &p );
-		~Point( void );
-*/
 #endif

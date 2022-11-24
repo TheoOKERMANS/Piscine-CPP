@@ -27,11 +27,4 @@ class ClapTrap
 		void		setAttackDamage( int ad);
 };
 
-/*
-Point( void );
-		Point( const float xf, const float yf );
-		Point( const Point &p );
-		Point&	operator=( const Point &p );
-		~Point( void );
-*/
 #endif
