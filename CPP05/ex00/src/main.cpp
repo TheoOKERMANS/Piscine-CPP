@@ -29,5 +29,15 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Bureaucrat	src = Bureaucrat("src", 140);
+		Bureaucrat	dst = src;
+		std::cout << dst << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }

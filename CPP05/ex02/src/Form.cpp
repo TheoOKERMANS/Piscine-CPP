@@ -1,5 +1,9 @@
 #include "Form.hpp"
 
+Form::Form(void)
+	:_name(""), _signed(false), _gradeSigned(-1), _gradeExec(-1)
+{}
+
 Form::Form(std::string name, int gradeSigned, int gradeExec)
 	: _name(name), _signed(false), _gradeSigned(gradeSigned)
 	, _gradeExec(gradeExec)
@@ -51,6 +55,11 @@ const char* Form::GradeTooLowException::what(void) const throw()
 	return ("Form: Grade too low");
 }
 
+const char* Form::FormNotSignException::what(void) const throw()
+{
+	return ("Form: Form not signed");
+}
+
 std::ostream&	operator<<(std::ostream& os, const Form& dt)
 {
 	os << dt.getName() << ", ";
@@ -62,4 +71,16 @@ std::ostream&	operator<<(std::ostream& os, const Form& dt)
 		<< dt.getGradeSigned() << std::endl <<  "	grade to exec : "
 		<< dt.getGradeExec();
 	return (os);
+}
+
+void		Form::beExecute(void) const {}
+
+void		Form::execute(Bureaucrat const & executor) const
+{
+	if (this->_signed == false)
+		throw (Form::FormNotSignException());
+	else if (executor.getGrade() > this->_gradeExec)
+		throw (Form::GradeTooLowException());
+	else
+		beExecute();
 }

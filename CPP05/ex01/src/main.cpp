@@ -23,6 +23,17 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 
+	try
+	{
+		Form src = Form("copy test", 100, 150);
+		Form dst = src;
+		std::cout << dst << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
 
 	try
 	{

@@ -1,16 +1,16 @@
 SRC_FILE = main.cpp \
-Animal.cpp \
-Dog.cpp \
-Cat.cpp \
-WrongAnimal.cpp \
-WrongCat.cpp \
-Brain.cpp
+Bureaucrat.cpp \
+Form.cpp \
+ShrubberyCreationForm.cpp \
+RobotomyRequestForm.cpp \
+PresidentialPardonForm.cpp \
+Intern.cpp
 
 SRC = $(addprefix src/, $(SRC_FILE))
 OBJ= $(SRC_FILE:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
-NAME = ex02
+NAME = ex03
 
 all: $(NAME)
 
@@ -21,7 +21,6 @@ $(NAME):
 	mv $(OBJ) obj
 
 clean:
-	rm -f $(OBJ)
 	rm -rf obj
 
 fclean: clean
