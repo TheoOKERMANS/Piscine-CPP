@@ -21,19 +21,7 @@ class Array
 
 		Array(const Array& cp):_size(cp._size)
 		{
-			int s = const_cast<Array&>(cp).size();
-			if (s > 0)
-			{
-				this->_array = new T[s];
-				int i = 0;
-				while (i < s)
-				{
-					this->_array[i] = const_cast<Array&>(cp)[i];
-					i++;
-				} 
-			}
-			else
-				this->_array = NULL;
+			*this = cp;
 		}
 
 		Array& operator=(const Array& cp)
@@ -62,8 +50,7 @@ class Array
 		{
 			if (i < 0 || i > static_cast<int>(this->_size) - 1)
 				throw(WrongIndex());
-			else
-				return (this->_array[i]);
+			return (this->_array[i]);
 		}
 
 		class WrongIndex: public std::exception
