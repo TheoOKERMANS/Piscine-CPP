@@ -15,6 +15,7 @@ int	main(int argc, char** argv)
 		{
 			std::cout << "Cannot operate because : " << e.what() << std::endl;
 		}
+		std::cout << std::endl;
 		i++;
 	}
 	return 0;
